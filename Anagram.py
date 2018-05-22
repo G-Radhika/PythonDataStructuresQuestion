@@ -50,3 +50,16 @@ def test_anagram(got, expected):
   else:
     prefix = '  X '
   print '%s got: %s expected: %s' % (prefix, repr(got), repr(expected))
+
+
+def main():
+  print 'question 1: ANAGRAM'
+  # Each line calls donuts, compares its result to the expected for that call.
+  test_anagram(question1("udacity", ''), False)    # Empty t
+  test_anagram(question1("udacity", 'u'), False)   # Only one letter in t
+  test_anagram(question1("udacity", 'uda'), True)  # combination is present
+  test_anagram(question1("udacity", 'uda'), True)  # combination is present
+  test_anagram(question1("udacity", 'cadi'), True)  # combination is present
+  # combination is NOT present
+  test_anagram(question1("udacity", 'abc'), False)
+  test_anagram(question1("udacity", 'abcdefgh'), False)  # length of t>s
